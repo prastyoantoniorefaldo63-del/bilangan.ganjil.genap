@@ -32,7 +32,8 @@ jobs:
           fi
 
           echo "Mengompilasi: $source_file"
-          g++ "$source_file" -o program.exe
+
+          g++ "$source_file" -o program.exe -static -static-libgcc -static-libstdc++
 
       - name: Upload EXE
         uses: actions/upload-artifact@v4
